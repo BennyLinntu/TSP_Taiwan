@@ -1,0 +1,49 @@
+{
+  "cities": 14,
+  "results": [
+    {
+      "method": "Held-Karp (exact)",
+      "cost_km": 656.2378,
+      "runtime_seconds": 0.152,
+      "status": "optimal",
+      "tour": [
+        "Taipei",
+        "Yilan",
+        "Pingtung",
+        "Kaohsiung",
+        "Tainan",
+        "Chiayi",
+        "Yunlin",
+        "Nantou",
+        "Changhua",
+        "Taichung",
+        "Miaoli",
+        "Hsinchu",
+        "Taoyuan",
+        "New Taipei"
+      ]
+    },
+    {
+      "method": "Nearest neighbour + 2-opt",
+      "cost_km": 656.2378,
+      "runtime_seconds": 0.0004,
+      "status": "heuristic",
+      "tour": [
+        "Taipei",
+        "New Taipei",
+        "Taoyuan",
+        "Hsinchu",
+        "Miaoli",
+        "Taichung",
+        "Changhua",
+        "Nantou",
+        "Yunlin",
+        "Chiayi",
+        "Tainan",
+        "Kaohsiung",
+        "Pingtung",
+        "Yilan"
+      ]
+    }
+  ]
+}

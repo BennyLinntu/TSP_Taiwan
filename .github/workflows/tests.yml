@@ -1,0 +1,31 @@
+name: TSP tests
+
+on:
+  push:
+    branches: [TSP_Taiwan, main]
+  pull_request:
+    branches: [TSP_Taiwan, main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Compile
+        run: python -m compileall -q tsp_solver.py tests
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Solve and generate map
+        run: python tsp_solver.py
